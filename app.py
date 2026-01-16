@@ -5,17 +5,17 @@ import pandas as pd
 from sklearn.preprocessing import StandardScaler
 from src.pipeline.predict_pipeline import CustomData,PredictPipeline
 
-import src.utils
-_cached_objects = {}
-_original_load_object = src.utils.load_object
+# import src.utils
+# _cached_objects = {}
+# _original_load_object = src.utils.load_object
 
-def load_object_cached(file_path):
-    if file_path not in _cached_objects:
-        print(f"Loading {file_path} for the first time...")
-        _cached_objects[file_path] = _original_load_object(file_path)
-    return _cached_objects[file_path]
+# def load_object_cached(file_path):
+#     if file_path not in _cached_objects:
+#         print(f"Loading {file_path} for the first time...")
+#         _cached_objects[file_path] = _original_load_object(file_path)
+#     return _cached_objects[file_path]
 
-src.utils.load_object = load_object_cached
+# src.utils.load_object = load_object_cached
 
 application=Flask(__name__)
 
